@@ -5,7 +5,11 @@ println("UW Homework: Simple Kotlin")
 // write a "whenFn" that takes an arg of type "Any" and returns a String
 
 fun whenFn(word: Any): String {
-    return word.toString()
+    if (word.toString == "Hello") {
+        return "world"
+    } else {
+        return "I don't understand"
+    }
 }
 
 // write an "add" function that takes two Ints, returns an Int, and adds the values
