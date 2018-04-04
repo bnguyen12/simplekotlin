@@ -5,11 +5,15 @@ println("UW Homework: Simple Kotlin")
 // write a "whenFn" that takes an arg of type "Any" and returns a String
 
 fun whenFn(word: Any): String {
-    if (word.toString == "Hello") {
-        return "world"
-    } else {
-        return "I don't understand"
+    when(word) {
+        0 -> return("zero")
+        1 -> return ("one")
+        in 2..10 -> return("low number")
+        is Int -> return("a number")
+        "Hello" -> return("world")
+        is String -> return("Say what?")
     }
+    return("I don't understand")
 }
 
 // write an "add" function that takes two Ints, returns an Int, and adds the values
@@ -30,6 +34,10 @@ fun mathOp(left: Int, right: Int, op: (Int, Int) -> Int): Int {
 }
 
 // write a class "Person" with first name, last name and age
+
+class Person(val firstName: String, val lastName: String, var age: Int) {
+    
+}
 
 // write a class "Money"
 
@@ -57,7 +65,7 @@ val add_tests = listOf(
     Pair(1, 2) to 3,
     Pair(-2, 2) to 0,
     Pair(123, 456) to 579
-)
+) 
 for ( (k,v) in add_tests) {
     print(if (add(k.first, k.second) == v) "." else "!")
 }
