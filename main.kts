@@ -35,7 +35,7 @@ class Person(val firstName: String, val lastName: String, var age: Int) {
     val debugString: String 
         get() = "[Person firstName:${firstName} lastName:${lastName} age:${age}]" 
         
-    fun hashCode(): Int {
+    override fun hashCode(): Int {
         return(firstName.hashCode() * lastName.hashCode() + age)
     }
 
